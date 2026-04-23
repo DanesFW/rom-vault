@@ -127,7 +127,7 @@ On Windows, Rust's MSVC toolchain and the Visual Studio C++ build tools are requ
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/rom-vault.git
+git clone https://github.com/DanesFW/rom-vault.git
 cd rom-vault
 npm install
 ```
