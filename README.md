@@ -208,6 +208,14 @@ ROM Vault stores all data in a local SQLite database. No data is sent anywhere e
 
 ---
 
+## AI Disclosure
+
+The majority of this project was built with the assistance of [Claude](https://claude.ai) (Anthropic) via Claude Code. The ideas, direction, design decisions, and testing are mine — Claude wrote most of the implementation under my guidance.
+
+I believe in being upfront about this. If that's not your thing, that's fair.
+
+---
+
 ## Acknowledgements
 
 ROM Vault would not be possible without the following projects and communities.
