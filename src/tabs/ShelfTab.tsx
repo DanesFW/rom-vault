@@ -1113,31 +1113,37 @@ export default function ShelfTab({ activeConsoleId, onSelectConsole }: { activeC
         position: "absolute", top: 10, left: "50%", transform: "translateX(-50%)",
         width: "62%", height: "52%",
         pointerEvents: "none",
-        display: "flex", alignItems: "flex-start", justifyContent: "center",
-        paddingTop: `${config.tvLogoY}%`,
       }}>
-        {/* Prev click zone — transparent, carousel renders the logo */}
-        <div
-          onClick={() => { if (prevConsoleId) onSelectConsole(prevConsoleId); }}
-          style={{
-            flex: 1, height: "35%",
-            cursor: prevConsoleId ? "pointer" : "default",
-            pointerEvents: prevConsoleId ? "auto" : "none",
-          }}
-        />
+        {/* Logo strip click zones — positioned to match the logo strip in PlaceholderBg */}
+        <div style={{
+          position: "absolute", left: 0, right: 0,
+          top: `${config.tvLogoY}%`, height: "35%",
+          display: "flex",
+          pointerEvents: "none",
+        }}>
+          {/* Prev click zone */}
+          <div
+            onClick={(e) => { e.stopPropagation(); if (prevConsoleId) onSelectConsole(prevConsoleId); }}
+            style={{
+              flex: 1, height: "100%",
+              cursor: prevConsoleId ? "pointer" : "default",
+              pointerEvents: prevConsoleId ? "auto" : "none",
+            }}
+          />
 
-        {/* Spacer matching center logo width */}
-        <div style={{ width: "33%", flexShrink: 0 }} />
+          {/* Spacer matching center logo width */}
+          <div style={{ width: "33%", flexShrink: 0 }} />
 
-        {/* Next click zone — transparent, carousel renders the logo */}
-        <div
-          onClick={() => { if (nextConsoleId) onSelectConsole(nextConsoleId); }}
-          style={{
-            flex: 1, height: "35%",
-            cursor: nextConsoleId ? "pointer" : "default",
-            pointerEvents: nextConsoleId ? "auto" : "none",
-          }}
-        />
+          {/* Next click zone */}
+          <div
+            onClick={(e) => { e.stopPropagation(); if (nextConsoleId) onSelectConsole(nextConsoleId); }}
+            style={{
+              flex: 1, height: "100%",
+              cursor: nextConsoleId ? "pointer" : "default",
+              pointerEvents: nextConsoleId ? "auto" : "none",
+            }}
+          />
+        </div>
       </div>
 
       {/* Loading overlay */}

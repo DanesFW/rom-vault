@@ -6,6 +6,56 @@ Built with Tauri 2, React 18, and SQLite. Everything runs on your machine -- no 
 
 ---
 
+## Screenshots
+
+### Library
+![Library — compact list view](public/screenshots/Main%20library%20density1.png)
+*Compact list view with per-ROM backlog status, file size, region, and format tags*
+
+![Library — medium density with cover art](public/screenshots/Main%20library%20density%202%20with%20items%20selected.png)
+*Medium density view with cover art thumbnails and multi-select*
+
+![Library — large card view](public/screenshots/Main%20library%20density%203%20.png)
+*Large card view showing full cover art for PlayStation 2*
+
+![Library — large card view, light mode](public/screenshots/Main%20library%20density%203%20light%20mode%20.png)
+*Same view in light mode*
+
+![Game detail](public/screenshots/Library%20game%20clicked.png)
+*Game detail panel with cover art, backlog tracking, file info, notes, and launch button*
+
+### Exclusives Tracker
+![Exclusives page](public/screenshots/Exclusives%20page.png)
+*Browse and track must-play exclusives per console with AI-assisted list import*
+
+### Stats
+![Stats — Nintendo group](public/screenshots/Stats%20page%20grouped.png)
+*Collection stats grouped by company with activity heatmap and playtime tracking*
+
+![Stats — multi-company](public/screenshots/Stats%20page%20grouped%202.png)
+*Stats across Xbox, Sega, Atari and more with per-console ROM counts*
+
+### Emulation Guide
+![Guide — company overview](public/screenshots/Guide%20main.png)
+*Emulation guide landing page — browse by company*
+
+![Guide — console detail](public/screenshots/Guide%20with%20console%20selected.png)
+*Per-console guide with recommended emulators and supported formats*
+
+### Shelf
+![Shelf view](public/screenshots/Shelf%20View.png)
+*3D shelf view with per-console spine art, box art, and configurable camera settings*
+
+### Timeline
+![Timeline](public/screenshots/Timeline%20main.png)
+*Console release timeline with owned-game highlighting and On This Day panel*
+
+### Settings
+![Settings](public/screenshots/Settings.png)
+*Settings panel with theme, display, library, emulator mapping, and data management*
+
+---
+
 ## Features
 
 **Library**
