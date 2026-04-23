@@ -2,97 +2,113 @@
 
 A local-first desktop application for managing a physical and digital ROM collection. Track your backlog, organize by console, manage cover art, and monitor collection completeness across platforms.
 
-Built with Tauri 2, React 18, and SQLite. Everything runs on your machine -- no accounts necessary, no internet requirement, no telemetry, nothing sent to me.
+Built with Tauri 2, React 18, and SQLite. Everything runs on your machine — no accounts, no internet requirement, no telemetry, nothing sent anywhere.
 
 ---
 
 ## Screenshots
 
-### Library
-![Library — compact list view](public/screenshots/Main%20library%20density1.png)
-*Compact list view with per-ROM backlog status, file size, region, and format tags*
-
-![Library — medium density with cover art](public/screenshots/Main%20library%20density%202%20with%20items%20selected.png)
-*Medium density view with cover art thumbnails and multi-select*
-
 ![Library — large card view](public/screenshots/Main%20library%20density%203%20.png)
-*Large card view showing full cover art for PlayStation 2*
-
-![Library — large card view, light mode](public/screenshots/Main%20library%20density%203%20light%20mode%20.png)
-*Same view in light mode*
-
-![Game detail](public/screenshots/Library%20game%20clicked.png)
-*Game detail panel with cover art, backlog tracking, file info, notes, and launch button*
-
-### Exclusives Tracker
-![Exclusives page](public/screenshots/Exclusives%20page.png)
-*Browse and track must-play exclusives per console with AI-assisted list import*
-
-### Stats
-![Stats — Nintendo group](public/screenshots/Stats%20page%20grouped.png)
-*Collection stats grouped by company with activity heatmap and playtime tracking*
-
-![Stats — multi-company](public/screenshots/Stats%20page%20grouped%202.png)
-*Stats across Xbox, Sega, Atari and more with per-console ROM counts*
-
-### Emulation Guide
-![Guide — company overview](public/screenshots/Guide%20main.png)
-*Emulation guide landing page — browse by company*
-
-![Guide — console detail](public/screenshots/Guide%20with%20console%20selected.png)
-*Per-console guide with recommended emulators and supported formats*
-
-### Shelf
-![Shelf view](public/screenshots/Shelf%20View.png)
-*3D shelf view with per-console spine art, box art, and configurable camera settings*
-
-### Timeline
-![Timeline](public/screenshots/Timeline%20main.png)
-*Console release timeline with owned-game highlighting and On This Day panel*
-
-### Settings
-![Settings](public/screenshots/Settings.png)
-*Settings panel with theme, display, library, emulator mapping, and data management*
 
 ---
 
 ## Features
 
-**Library**
-- Scan local directories for ROM files across any console
-- Automatic format detection (ZIP, 7z, BIN, ISO, and more)
+### Library
+![Library — compact list view](public/screenshots/Main%20library%20density1.png)
+
+- Scan local folders for ROM files across any console
+- Automatic format detection (ZIP, 7z, BIN, ISO, CHD, and more)
 - Multi-disc ROM grouping
 - Per-ROM backlog tracking: Unplayed, In Progress, Beaten, Completed
 - Personal notes and custom tags per game
-- Rename ROMs without touching the file
+- Rename ROMs without touching the file on disk
 - Playlist support for curated collections
-- Four density levels from compact list to large card view
+- Four density levels from compact list to large card view with cover art
+- Light and dark theme
 
-**Cover Art**
+![Game detail](public/screenshots/Library%20game%20clicked.png)
+
+---
+
+### Cover Art
 - Automatic cover art lookup via the Libretro Thumbnails database
 - Custom art upload or online search per game
 - Lazy-loaded thumbnails with skeleton placeholders
 
-**Exclusives Tracker**
-- Import curated lists of console exclusives
+---
+
+### Timeline
+![Timeline](public/screenshots/Timeline%20main.png)
+
+- Full console release history plotted on an interactive horizontal timeline
+- Highlights which consoles you own ROMs for
+- Filter by system type (home / handheld) or owned-only
+- On This Day panel — a daily gaming history fact, with a launch button if you own the ROM
+
+---
+
+### Exclusives Tracker
+![Exclusives page](public/screenshots/Exclusives%20page.png)
+
+- Browse curated lists of must-play exclusives per console
 - Mark owned titles and track collection gaps
 - Filter and sort by genre, ownership, or alphabetically
+- AI-assisted list import for quickly populating a console's wishlist
 
-**Hashing and Verification**
+---
+
+### Stats
+![Stats](public/screenshots/Stats%20page%20grouped.png)
+
+- Collection overview grouped by company and console generation
+- Activity heatmap and session history
+- Playtime tracking per game
+- Beaten and completion rates across your library
+
+---
+
+### Emulation Guide
+![Guide — company overview](public/screenshots/Guide%20main.png)
+![Guide — console detail](public/screenshots/Guide%20with%20console%20selected.png)
+
+- Per-console setup guides with recommended emulators and supported formats
+- Browse by company or console
+
+---
+
+### Shelf
+![Shelf view](public/screenshots/Shelf%20View.png)
+
+- 3D shelf view with physically accurate box proportions per console
+- Spine art using console branding and game logos
+- Configurable camera, spacing, spine colour, and box shape per console
+- Navigate by scroll, arrow keys, or gamepad
+
+---
+
+### Hashing and Verification
 - CRC32, MD5, and SHA-1 hashing per ROM
 - Extracts and hashes inner content from ZIP and 7z archives
-- Hash verification via Hasheous.org database
+- Hash verification via the Hasheous database
 - Batch hashing across selected ROMs
 
-**Stats**
-- Collection overview by company and generation
-- Playtime and session tracking per game
-- Beaten and completion rates
+---
 
-**Export**
-- Export collection as a self-contained HTML page
+### Export
+- Export your collection as a self-contained HTML page
 - Export as Markdown tables (Reddit, GitHub, forums)
 - Full JSON backup and restore
+
+---
+
+### Settings
+![Settings](public/screenshots/Settings.png)
+
+- Dark and light theme
+- Emulator mapping per console for in-app game launching
+- Configurable header stats, tab colours, and display density
+- API key management for cover art sources
 
 ---
 
@@ -128,7 +144,7 @@ Build a release binary:
 npm run tauri build
 ```
 
-The compiled application will be in `src-tauri/target/release/`.
+The installer will be in `src-tauri/target/release/bundle/nsis/`.
 
 ---
 
@@ -142,10 +158,11 @@ rom-vault/
     hooks/              State and data hooks
     data/               Static data (console list, platform logos, cover images)
   src-tauri/
-    src/                Rust backend
+    src/
       main.rs           Tauri commands (scanning, hashing, file ops, API calls)
-  index.html
-  vite.config.ts
+    migrations/         SQLite migration files
+  public/
+    screenshots/        README screenshots
 ```
 
 ---
@@ -180,17 +197,17 @@ ROM Vault would not be possible without the following projects and communities.
 
 **Cover Art**
 
-[Libretro Thumbnails](https://github.com/libretro-thumbnails/libretro-thumbnails) -- the primary source for boxart images, served from thumbnails.libretro.com. A community-maintained archive of cover art for thousands of games across every major platform.
+[Libretro Thumbnails](https://github.com/libretro-thumbnails/libretro-thumbnails) — the primary source for boxart images, served from thumbnails.libretro.com. A community-maintained archive of cover art for thousands of games across every major platform.
 
-[GameTDB](https://www.gametdb.com) -- disc ID to canonical title database used to resolve Wii, GameCube, DS, and 3DS filenames to their correct artwork names.
+[GameTDB](https://www.gametdb.com) — disc ID to canonical title database used to resolve Wii, GameCube, DS, and 3DS filenames to their correct artwork names.
 
 **Hash Verification**
 
-[Hasheous](https://hasheous.org) -- an open database of ROM hashes mapped to verified game entries. Used to identify and verify ROMs by their SHA-1 checksum against No-Intro, Redump, TOSEC, and MAME dat files.
+[Hasheous](https://hasheous.org) — an open database of ROM hashes mapped to verified game entries. Used to identify and verify ROMs by their SHA-1 checksum against No-Intro, Redump, TOSEC, and MAME dat files.
 
 **ROM Naming Standards**
 
-[No-Intro](https://www.no-intro.org) and [Redump](http://redump.org) -- the dat file standards whose naming conventions ROM Vault follows when matching filenames to cover art and database entries.
+[No-Intro](https://www.no-intro.org) and [Redump](http://redump.org) — the dat file standards whose naming conventions ROM Vault follows when matching filenames to cover art and database entries.
 
 **Platform Logos and Hardware Images**
 
@@ -200,6 +217,6 @@ Console logos, company logos, and hardware silhouette images used throughout the
 
 ## License
 
-MIT -- see [LICENSE](LICENSE) for the full text.
+MIT — see [LICENSE](LICENSE) for the full text.
 
 The source code is MIT licensed. Third-party assets (console logos, hardware images, cover art) are the property of their respective owners and are not covered by this license.
