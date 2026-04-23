@@ -112,17 +112,36 @@ Built with Tauri 2, React 18, and SQLite. Everything runs on your machine — no
 
 ---
 
-## Requirements
+## Installation
 
-- [Node.js](https://nodejs.org/) 18 or later
-- [Rust](https://rustup.rs/) (stable toolchain)
-- [Tauri CLI v2](https://tauri.app/start/prerequisites/)
+Pre-built installers for Windows, Linux, and macOS are available on the [Releases page](https://github.com/DanesFW/rom-vault/releases). Download the file for your platform and run it — no additional software required.
 
-On Windows, Rust's MSVC toolchain and the Visual Studio C++ build tools are required. The Tauri prerequisites page covers this in detail.
+| Platform | File |
+|----------|------|
+| Windows  | `ROM Vault_*_x64-setup.exe` |
+| Linux    | `rom-vault_*_amd64.AppImage` |
+| macOS    | `ROM Vault_*_universal.dmg` |
+
+**macOS:** Right-click the `.dmg` and choose Open the first time. Apple blocks unsigned apps by default until you explicitly allow them.
+
+**Linux:** Make the AppImage executable before running it:
+```bash
+chmod +x rom-vault_*.AppImage
+./rom-vault_*.AppImage
+```
 
 ---
 
-## Getting Started
+## Building from Source
+
+These steps are only needed if you want to modify or build the app yourself. Regular users should use the installers above.
+
+**Requirements:**
+- [Node.js](https://nodejs.org/) 18 or later
+- [Rust](https://rustup.rs/) (stable toolchain)
+- [Tauri v2 prerequisites](https://tauri.app/start/prerequisites/) for your platform
+
+On Windows, Rust's MSVC toolchain and the Visual Studio C++ build tools are required. The Tauri prerequisites page covers this in detail.
 
 Clone the repository and install dependencies:
 
@@ -142,26 +161,6 @@ Build a release binary for your current platform:
 
 ```bash
 npm run tauri build
-```
-
-Output locations:
-
-| Platform | Output |
-|----------|--------|
-| Windows  | `src-tauri/target/release/bundle/nsis/*.exe` |
-| Linux    | `src-tauri/target/release/bundle/appimage/*.AppImage` |
-| macOS    | `src-tauri/target/release/bundle/dmg/*.dmg` |
-
-### Pre-built releases
-
-Pre-built installers for Windows, Linux, and macOS are attached to every [GitHub Release](https://github.com/DanesFW/rom-vault/releases). These are built automatically via GitHub Actions when a new version tag is pushed — no local toolchain needed.
-
-**macOS users:** Right-click the `.dmg` and choose Open the first time. Apple blocks unsigned apps by default until you explicitly allow them.
-
-**Linux users:** Make the AppImage executable before running it:
-```bash
-chmod +x rom-vault_*.AppImage
-./rom-vault_*.AppImage
 ```
 
 ---
