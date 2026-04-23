@@ -31,6 +31,15 @@ Built with Tauri 2, React 18, and SQLite. Everything runs on your machine — no
 
 ---
 
+### Emulator Launching & Play Tracking
+- Map any emulator to any console in Settings
+- Launch games directly from the library, shelf view, or On This Day panel
+- Tracks every play session automatically — start time, duration, and play count
+- Playtime totals and session history per game
+- Supports standalone emulators and RetroArch cores
+
+---
+
 ### Cover Art
 - Automatic cover art lookup via the Libretro Thumbnails database
 - Custom art upload or online search per game
@@ -62,7 +71,7 @@ Built with Tauri 2, React 18, and SQLite. Everything runs on your machine — no
 ![Stats](public/screenshots/Stats%20page%20grouped.png)
 
 - Collection overview grouped by company and console generation
-- Activity heatmap and session history
+- Session history
 - Playtime tracking per game
 - Beaten and completion rates across your library
 
@@ -80,7 +89,7 @@ Built with Tauri 2, React 18, and SQLite. Everything runs on your machine — no
 ### Shelf
 ![Shelf view](public/screenshots/Shelf%20View.png)
 
-- 3D shelf view with physically accurate box proportions per console
+- 3D shelf view with physical box proportions per console
 - Spine art using console branding and game logos
 - Configurable camera, spacing, spine colour, and box shape per console
 - Navigate by scroll, arrow keys, or gamepad
@@ -210,9 +219,7 @@ ROM Vault stores all data in a local SQLite database. No data is sent anywhere e
 
 ## AI Disclosure
 
-The majority of this project was built with the assistance of [Claude](https://claude.ai) (Anthropic) via Claude Code. The ideas, direction, design decisions, and testing are mine — Claude wrote most of the implementation under my guidance.
-
-I believe in being upfront about this. If that's not your thing, that's fair.
+The majority of this project was built with the assistance of Claude. The ideas, direction, design decisions, and testing are mine — Claude wrote most of the implementation under my guidance.
 
 ---
 
