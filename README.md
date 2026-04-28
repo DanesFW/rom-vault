@@ -2,7 +2,7 @@
 
 A local-first desktop application for managing a physical and digital ROM collection. Track your backlog, organize by console, manage cover art, and monitor collection completeness across platforms.
 
-Built with Tauri 2, React 18, and SQLite. Everything can run locally — no accounts, no internet requirement (only for box art, if wanted), no telemetry, nothing sent anywhere.
+Built with Tauri 2, React 18, and SQLite. Everything can run locally. No accounts, no internet requirement (only for box art, if wanted), no telemetry, nothing sent anywhere.
 
 ---
 
@@ -34,7 +34,7 @@ Built with Tauri 2, React 18, and SQLite. Everything can run locally — no acco
 ### Emulator Launching & Play Tracking
 - Map any emulator to any console in Settings
 - Launch games directly from the library, shelf view, or On This Day panel
-- Tracks every play session automatically — start time, duration, and play count
+- Tracks every play session automatically: start time, duration, and play count
 - Playtime totals and session history per game
 - Supports standalone emulators and RetroArch cores
 
