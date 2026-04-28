@@ -2,7 +2,7 @@
 
 A local-first desktop application for managing a physical and digital ROM collection. Track your backlog, organize by console, manage cover art, and monitor collection completeness across platforms.
 
-Built with Tauri 2, React 18, and SQLite. Everything runs on your machine — no accounts, no internet requirement, no telemetry, nothing sent anywhere.
+Built with Tauri 2, React 18, and SQLite. Everything can run locally — no accounts, no internet requirement (only for box art, if wanted), no telemetry, nothing sent anywhere.
 
 ---
 
@@ -219,7 +219,7 @@ ROM Vault stores all data in a local SQLite database. No data is sent anywhere e
 
 ## AI Disclosure
 
-The majority of this project was built with the assistance of Claude. The ideas, direction, design decisions, and testing are mine — Claude wrote most of the implementation under my guidance.
+The majority of this project was built with the assistance of Claude. The ideas, direction, design decisions, and testing are mine. Claude wrote most of the implementation under my guidance.
 
 ---
 
